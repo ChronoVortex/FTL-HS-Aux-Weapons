@@ -1,6 +1,6 @@
 <metadata>
     <title><![CDATA[ Auxiliary Weapons Pack ]]></title>
-    <threadUrl><![CDATA[ ??? ]]></threadUrl>
+    <threadUrl><![CDATA[ https://www.subsetgames.com/forum/viewtopic.php?f=11&t=38381 ]]></threadUrl>
     <author>
 <![CDATA[
 Chrono Vortex
@@ -10,7 +10,9 @@ additional credit: R4V3-0N, Alder
     <version><![CDATA[ 1.0 ]]></version>
     <description>
 <![CDATA[
-This mod adds several support weapons and drones which have beneficial effects aside from damaging the enemy ship. To use this mod, you must have Hyperspace 1.3+ and Vertex Tags and Utility Functions. It must be patched after Vertex, so the load order should look something like this:
+Tired of mindlessly blowing the crap out of ships? Looking for something to spice up your build that doesn't just go "pew pew?" Well look no further! This pack adds several weapons designed to fill a support role on your ship, with abilities ranging from painting targets for your combat drones to pre-igniting your favorite shooty stick.
+
+To use this mod, you must have Hyperspace 1.3+ and Vertex Tags and Utility Functions. It must be patched after Vertex, so the load order should look something like this:
 
 | ...
 | Vertex Tags and Utility Functions
