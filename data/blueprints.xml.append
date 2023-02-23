@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<weaponBlueprint name="LIGHT_PRE_IGNITER">
+	<type>BEAM</type>
+	<flavorType>Pre-Igniter</flavorType>
+	<title>Lightweight Pre-Igniter</title>
+	<short>Pre-Igniter</short>
+	<desc>This unique pre-igniter is similar to the original prototype developed by Jackson Newman, taking the place of a weapon instead of augmenting a ship. The weapon to its right will be fully charged after an FTL jump, and the cooldown of all weapons is improved by 5% while equipped.</desc>
+	<tooltip>Storage Weapon</tooltip>
+	<damage>0</damage>
+    <augEffects>
+        <augEffect effect="AUTO_COOLDOWN" amount="0.05" needsPower="false"/>
+    </augEffects>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>5</rarity>
+	<power>0</power>
+	<cost>90</cost>
+	<image>beam_contact</image>
+	<weaponArt>light_preigniter</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="RECYCLER_CORE">
+	<type>BEAM</type>
+	<flavorType>Recycler</flavorType>
+	<title>Tactical Recycler</title>
+	<short>Recycler</short>
+	<desc>Instead of functioning as a weapon, this device gives all ammo-consuming weapons a 70% chance not to consume ammo while powered. This benefit overrides augments and upgrades which provide a lower recycle chance, and is overridden by a greater recycle chance.</desc>
+	<tooltip>Storage Weapon</tooltip>
+	<damage>0</damage>
+    <augEffects>
+        <augEffect effect="EXPLOSIVE_REPLICATOR" amount="0.7" nostack="true"/>
+    </augEffects>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>3</rarity>
+	<power>2</power>
+	<cost>75</cost>
+	<image>beam_contact</image>
+	<weaponArt>recycler_core</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="LASER_PAINT">
+	<type>LASER</type>
+	<title>Target Painter Laser</title>
+	<short>Target Painter</short>
+	<tip>tip_laser</tip>
+	<desc>While only as powerful as a common defense Laser, this weapon has the unique ability to refocus your combat drones' fire onto whatever room it hits.</desc>
+	<tooltip>Defense laser; 1 damage, 1 shot. 9 second cooldown.</tooltip>
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>9</cooldown>
+	<power>1</power>
+	<cost>50</cost>
+	<bp>2</bp>
+	<rarity>3</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_painter</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="LASER_PIERCE_PAINT">
+	<type>LASER</type>
+	<title>Target Painter Pierce Laser</title>
+	<short>Pierce Painter</short>
+	<tip>tip_laser</tip>
+	<desc>Fires only one shot, but refocuses your combat drones' fire onto whatever room it hits.</desc>
+	<tooltip>Pierce laser; 1 damage, 1 shot, pierces 1 shield. 11 second cooldown.</tooltip>
+	<damage>1</damage>
+	<accuracyMod>10</accuracyMod>
+	<shots>1</shots>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>3</breachChance>
+	<cooldown>10</cooldown>
+	<power>1</power>
+	<cost>60</cost>
+	<bp>2</bp>
+	<rarity>4</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>laser_piece</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_pierce_painter</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="BOMB_TRANS">
+	<type>BOMB</type>
+	<tip>tip_bombs</tip>
+	<title>Sex Change Bomb</title>
+	<short>Sex Bomb</short>
+	<desc>Originally invented by the slugs to demoralize their opponents, this "weapon" has ironically made it much easier for members of gendered races to attain the body which best suits them.</desc>
+	<tooltip>Bomb weapon; requires a missile; swaps sex of nearby crewmembers. Can target your own ship.</tooltip>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>-16</persDamage>
+	<missiles>1</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>18</cooldown>
+	<power>1</power>
+	<cost>40</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_trans</image>
+	<explosion>explosion_trans</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>transBomb</sound>
+	</hitShipSounds>
+	<weaponArt>bomblauncher_trans</weaponArt>
+	<iconImage>bomb_heal</iconImage>
+</weaponBlueprint>
+
+<droneBlueprint name="DRONE_SHIELD_BOOST">
+    <type>SHIELD</type>
+    <level>1</level>
+    <tip>tip_defense</tip>
+    <title>Overbooster</title>
+    <short>Overbooster</short>
+    <desc>A specialized Defense Drone which can charge additional Energy Shield points. Cannot exceed the maximum of 5 unless a stronger Energy Shield augment is present. Modified to improve shield recharge rate by 40% while powered.</desc>
+    <augEffects>
+        <augEffect effect="SHIELD_RECHARGE" amount="0.4"/>
+    </augEffects>
+    <power>2</power>
+    <cooldown>0</cooldown> <!--doesn't work-->
+    <dodge>0</dodge>
+    <speed>4</speed>
+    <cost>65</cost>
+    <bp>2</bp>
+    <droneImage>drone_shield_boost</droneImage>
+    <rarity>5</rarity>
+    <iconImage>shield</iconImage>
+</droneBlueprint>

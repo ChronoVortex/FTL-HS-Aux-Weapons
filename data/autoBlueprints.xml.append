@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_ALL_CRAPBUCKET">
+    <mod-append:name>LIGHT_PRE_IGNITER</mod-append:name>
+    <mod-append:name>RECYCLER_CORE</mod-append:name>
+    <mod-append:name>LASER_PAINT</mod-append:name>
+    <mod-append:name>LASER_PIERCE_PAINT</mod-append:name>
+    <mod-append:name>BOMB_TRANS</mod-append:name>
+</mod:findName>
+<mod:findName type="blueprintList" name="LIST_DRONES_ALL_CRAPBUCKET">
+    <mod-append:name>DRONE_SHIELD_BOOST</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="BLUELIST_BOMBS_HEAL">
+    <mod-append:name>BOMB_TRANS</mod-append:name>
+</mod:findName>
+<mod:findName type="blueprintList" name="BLUELIST_DRONES_OVERCHARGER">
+    <mod-append:name>DRONE_SHIELD_BOOST</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="SHOP_ITEM_WEAPONS_LASERS">
+    <mod-append:name>LASER_PAINT</mod-append:name>
+    <mod-append:name>LASER_PIERCE_PAINT</mod-append:name>
+</mod:findName>
+<mod:findName type="blueprintList" name="SHOP_ENGI_ITEM_WEAPONS">
+    <mod-append:name>LASER_PAINT</mod-append:name>
+    <mod-append:name>LASER_PIERCE_PAINT</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_ENGI">
+    <mod-append:name>LASER_PAINT</mod-append:name>
+    <mod-append:name>LASER_PIERCE_PAINT</mod-append:name>
+</mod:findName>
+
+
+
+<mod:findName type="blueprintList" name="WEAPONS_CIRCLE">
+    <mod-append:name>LASER_PAINT</mod-append:name>
+    <mod-append:name>LASER_PIERCE_PAINT</mod-append:name>
+</mod:findName>

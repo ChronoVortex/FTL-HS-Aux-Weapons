@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<animSheet name="light_preigniter" w="168" h="65" fw="56" fh="65">weapons/light_preigniter_strip3.png</animSheet>
+<weaponAnim name="light_preigniter">
+	<sheet>light_preigniter</sheet>
+	<desc length="3" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint  x="0" y="0" />
+	<mountPoint x="12" y="48" />
+</weaponAnim>
+
+<animSheet name="recycler_core" w="147" h="51" fw="49" fh="51">weapons/recycler_core_strip3.png</animSheet>
+<weaponAnim name="recycler_core">
+	<sheet>recycler_core</sheet>
+	<desc length="3" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint  x="0" y="0" />
+	<mountPoint x="11" y="35" />
+</weaponAnim>
+
+<animSheet name="laser_painter" w="192" h="56" fw="16" fh="56">weapons/laser_painter_strip12.png</animSheet>
+<weaponAnim name="laser_painter">
+	<sheet>laser_painter</sheet>
+	<desc length="12" x="0" y="0"/>
+	<chargedFrame>5</chargedFrame>
+	<fireFrame>8</fireFrame>
+	<firePoint  x="10" y="10"/>
+	<mountPoint x="2" y="38"/>
+	<chargeImage>weapons/laser_painter_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="laser_pierce_painter" w="299" h="63" fw="23" fh="63">weapons/laser_painter_pierce_strip13.png</animSheet>
+<weaponAnim name="laser_pierce_painter">
+	<sheet>laser_pierce_painter</sheet>
+	<desc length="13" x="0" y="0"/>
+	<chargedFrame>5</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint  x="15" y="10"/>
+	<mountPoint x="4" y="40"/>
+	<chargeImage>weapons/laser_painter_pierce_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="bomblauncher_trans" w="540" h="40" fw="36" fh="40">weapons/bomblauncher_trans.png</animSheet>
+<weaponAnim name="bomblauncher_trans">
+	<sheet>bomblauncher_trans</sheet>
+	<desc length="15" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>12</fireFrame>
+	<firePoint x="20" y="21" />
+	<mountPoint x="4" y="23" />
+	<chargeImage>weapons/bomblauncher_trans_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="bomb_trans" w="525" h="35" fw="35" fh="35">weapons/bomb_trans.png</animSheet>
+<anim name="bomb_trans">
+	<sheet>bomb_trans</sheet>
+	<desc length="15" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
+<animSheet name="explosion_trans" w="640" h="64" fw="64" fh="64">effects/explosion_trans_strip10.png</animSheet>
+<anim name="explosion_trans">
+	<sheet>explosion_trans</sheet>
+	<desc length="10" x="0" y="0"/>
+	<time>0.75</time>
+</anim>
