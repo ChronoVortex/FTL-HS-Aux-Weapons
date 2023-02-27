@@ -16,7 +16,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                 local lastWeaponWasIgniter = false
                 for weapon in vter(weapons) do
                     if lastWeaponWasIgniter and weapon.powered then
-                        weapon.cooldown.first = weapon.cooldown.second - Hyperspace.FPS.SpeedFactor/16
+                        weapon:ForceCoolup()
                     end
                     lastWeaponWasIgniter = weapon.blueprint.name == "LIGHT_PRE_IGNITER"
                 end
