@@ -41,6 +41,16 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipMa
             end
         end
         
+        -- Reduce ionization for de-ionizer bomb
+        if weaponName == "BOMB_ION_ANTI" then
+            local impactSys = shipManager:GetSystemInRoom(shipManager.ship:GetSelectedRoomId(location.x, location.y, true))
+            if impactSys and impactSys.iLockCount > 0 then
+                impactSys.iLockCount = math.max(0, impactSys.iLockCount - 2)
+                impactSys:ForceIncreasePower(1)
+                impactSys:ForceIncreasePower(1)
+            end
+        end
+        
         -- Change sex for trans bomb
         if weaponName == "BOMB_TRANS" then
             local impactRoom = shipManager.ship:GetSelectedRoomId(location.x, location.y, true)

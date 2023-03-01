@@ -121,6 +121,52 @@
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
 
+<weaponBlueprint name="BOMB_ION_ANTI">
+	<type>BOMB</type>
+	<tip>tip_bombs</tip>
+	<title>Deionizer Bomb</title>
+	<short>De-Ion B.</short>
+	<locked>1</locked>
+	<desc>Self-teleporting explosive that reverses ion damage. Useful for reducing system cooldowns. Can target your own ship.</desc>
+    <descriptionOverride>Self-teleporting explosive that reverses ion damage. Useful for reducing system cooldowns. Can target your own ship.
+
+Stats:
+Requires no power
+Charge Time: 16 seconds
+Missile Consumption: 1
+Accuracy Bonus: +30%
+
+Shots Per Charge: 1
+
+Ion Damage: -2
+
+Buy/Sell Price: 55~/27~
+    </descriptionOverride>
+	<tooltip>Bomb weapon; requires a missile; does no damage but removes 2 ion damage. Can target your own ship.</tooltip>
+	<damage>0</damage>
+	<accuracyMod>30</accuracyMod>
+	<missiles>1</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>16</cooldown>
+	<power>0</power>
+	<cost>55</cost>
+	<bp>4</bp>
+	<rarity>4</rarity>
+	<image>bomb_ion</image>
+	<explosion>explosion_repair</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>healBomb</sound>
+	</hitShipSounds>
+	<weaponArt>bomblauncher_ion</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
 <weaponBlueprint name="BOMB_TRANS">
 	<type>BOMB</type>
 	<tip>tip_bombs</tip>
@@ -148,6 +194,17 @@
 	</launchSounds>
 	<hitShipSounds>
 		<sound>transBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
+		<sound>healBomb</sound>
 	</hitShipSounds>
 	<weaponArt>bomblauncher_trans</weaponArt>
 	<iconImage>bomb_heal</iconImage>

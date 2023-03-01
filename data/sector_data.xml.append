@@ -6,6 +6,7 @@
         <mod-append:blueprint name="RECYCLER_CORE" rarity="0"/>
         <mod-append:blueprint name="LASER_PAINT" rarity="0"/>
         <mod-append:blueprint name="LASER_PIERCE_PAINT" rarity="0"/>
+        <mod-append:blueprint name="BOMB_ION_ANTI" rarity="0"/>
     </mod:findLike>
 </mod:findName>
 <mod:findName type="sectorDescription" name="SECRET_ROYAL">
@@ -14,6 +15,7 @@
         <mod-append:blueprint name="RECYCLER_CORE" rarity="0"/>
         <mod-append:blueprint name="LASER_PAINT" rarity="0"/>
         <mod-append:blueprint name="LASER_PIERCE_PAINT" rarity="0"/>
+        <mod-append:blueprint name="BOMB_ION_ANTI" rarity="0"/>
     </mod:findLike>
 </mod:findName>
 
