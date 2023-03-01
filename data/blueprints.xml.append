@@ -132,7 +132,7 @@
 
 Stats:
 Requires no power
-Charge Time: 16 seconds
+Charge Time: 22 seconds
 Missile Consumption: 1
 Accuracy Bonus: +30%
 
@@ -142,6 +142,14 @@ Ion Damage: -2
 
 Buy/Sell Price: 55~/27~
     </descriptionOverride>
+    <tooltipOverride>Requires no power
+Charge Time: 22 seconds
+Missile Consumption: 1
+Accuracy Bonus: +30%
+
+Shots Per Charge: 1
+
+Ion Damage: -2</tooltipOverride>
 	<tooltip>Bomb weapon; requires a missile; does no damage but removes 2 ion damage. Can target your own ship.</tooltip>
 	<damage>0</damage>
 	<accuracyMod>30</accuracyMod>
