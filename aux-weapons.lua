@@ -46,8 +46,7 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipMa
             local impactSys = shipManager:GetSystemInRoom(shipManager.ship:GetSelectedRoomId(location.x, location.y, true))
             if impactSys and impactSys.iLockCount > 0 then
                 impactSys.iLockCount = math.max(0, impactSys.iLockCount - 2)
-                impactSys:ForceIncreasePower(1)
-                impactSys:ForceIncreasePower(1)
+                impactSys:ForceIncreasePower(math.min(2, impactSys:GetMaxPower() - impactSys:GetEffectivePower()))
             end
         end
         

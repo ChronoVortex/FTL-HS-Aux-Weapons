@@ -155,7 +155,7 @@ Buy/Sell Price: 55~/27~
 	<cost>55</cost>
 	<bp>4</bp>
 	<rarity>4</rarity>
-	<image>bomb_ion</image>
+	<image>bomb_ion_anti</image>
 	<explosion>explosion_repair</explosion>
 	<launchSounds>
 		<sound>bombTeleport</sound>
@@ -163,7 +163,7 @@ Buy/Sell Price: 55~/27~
 	<hitShipSounds>
 		<sound>healBomb</sound>
 	</hitShipSounds>
-	<weaponArt>bomblauncher_ion</weaponArt>
+	<weaponArt>bomblauncher_ion_anti</weaponArt>
 	<iconImage>bomb</iconImage>
 </weaponBlueprint>
 

@@ -42,6 +42,23 @@
 	<chargeImage>weapons/laser_painter_pierce_glow.png</chargeImage>
 </weaponAnim>
 
+<animSheet name="bomblauncher_ion_anti" w="455" h="40" fw="35" fh="40">weapons/bomblauncher_ion_anti_strip13.png</animSheet>
+<weaponAnim name="bomblauncher_ion_anti">
+	<sheet>bomblauncher_ion_anti</sheet>
+	<desc length="13" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>10</fireFrame>
+	<firePoint x="20" y="21" />
+	<mountPoint x="4" y="24" />
+	<chargeImage>weapons/bomblauncher_ion_anti_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="bomb_ion_anti" w="525" h="35" fw="35" fh="35">weapons/bomb_ion_anti.png</animSheet>
+<anim name="bomb_ion_anti">
+	<sheet>bomb_ion_anti</sheet>
+	<desc length="15" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
+
 <animSheet name="bomblauncher_trans" w="540" h="40" fw="36" fh="40">weapons/bomblauncher_trans.png</animSheet>
 <weaponAnim name="bomblauncher_trans">
 	<sheet>bomblauncher_trans</sheet>
