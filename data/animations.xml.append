@@ -9,6 +9,12 @@
 	<firePoint  x="0" y="0" />
 	<mountPoint x="12" y="48" />
 </weaponAnim>
+<animSheet name="light_preigniter_icon" w="114" h="40" fw="57" fh="40">weapons/light_preigniter_icon.png</animSheet>
+<anim name="light_preigniter_icon">
+	<sheet>light_preigniter_icon</sheet>
+	<desc length="2" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
 
 <animSheet name="recycler_core" w="147" h="51" fw="49" fh="51">weapons/recycler_core_strip3.png</animSheet>
 <weaponAnim name="recycler_core">
@@ -19,6 +25,12 @@
 	<firePoint  x="0" y="0" />
 	<mountPoint x="11" y="35" />
 </weaponAnim>
+<animSheet name="recycler_core_icon" w="86" h="40" fw="43" fh="40">weapons/recycler_core_icon.png</animSheet>
+<anim name="recycler_core_icon">
+	<sheet>recycler_core_icon</sheet>
+	<desc length="2" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
 
 <animSheet name="laser_painter" w="192" h="56" fw="16" fh="56">weapons/laser_painter_strip12.png</animSheet>
 <weaponAnim name="laser_painter">
