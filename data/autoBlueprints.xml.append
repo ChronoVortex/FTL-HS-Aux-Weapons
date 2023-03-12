@@ -18,6 +18,15 @@
     <mod-append:name>DRONE_SHIELD_BOOST</mod-append:name>
 </mod:findName>
 
+<mod:findName type="blueprintList" name="SHOP_ITEM_SYLVAN_PIERCE">
+    <mod-append:name>LASER_PIERCE_PAINT</mod-append:name>
+</mod:findName>
+<mod:findName type="blueprintList" name="SHOP_ITEM_SYLVAN_UTILITY">
+    <mod-append:name>LIGHT_PRE_IGNITER</mod-append:name>
+    <mod-append:name>RECYCLER_CORE</mod-append:name>
+    <mod-append:name>BOMB_ION_ANTI</mod-append:name>
+</mod:findName>
+
 <mod:findName type="blueprintList" name="SHOP_ITEM_WEAPONS_LASERS">
     <mod-append:name>LASER_PAINT</mod-append:name>
     <mod-append:name>LASER_PIERCE_PAINT</mod-append:name>
