@@ -2,7 +2,7 @@
 
 <FTL>
 
-<mod:findLike type="scripts">
+<mod:findLike type="scripts" limit="1">
     <mod-append:script>aux-weapons.lua</mod-append:script>
 </mod:findLike>
 
