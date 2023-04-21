@@ -4,6 +4,7 @@
     <mod:findLike type="rarityList">
         <mod-append:blueprint name="LIGHT_PRE_IGNITER" rarity="0"/>
         <mod-append:blueprint name="RECYCLER_CORE" rarity="0"/>
+        <mod-append:blueprint name="EM_JAMMER" rarity="0"/>
         <mod-append:blueprint name="LASER_PAINT" rarity="0"/>
         <mod-append:blueprint name="LASER_PIERCE_PAINT" rarity="0"/>
         <mod-append:blueprint name="BOMB_ION_ANTI" rarity="0"/>
@@ -13,6 +14,7 @@
     <mod:findLike type="rarityList">
         <mod-append:blueprint name="LIGHT_PRE_IGNITER" rarity="0"/>
         <mod-append:blueprint name="RECYCLER_CORE" rarity="0"/>
+        <mod-append:blueprint name="EM_JAMMER" rarity="0"/>
         <mod-append:blueprint name="LASER_PAINT" rarity="0"/>
         <mod-append:blueprint name="LASER_PIERCE_PAINT" rarity="0"/>
         <mod-append:blueprint name="BOMB_ION_ANTI" rarity="0"/>

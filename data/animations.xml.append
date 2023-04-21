@@ -33,6 +33,17 @@
 	<time>1.0</time>
 </anim>
 
+<animSheet name="em_jammer" w="4902" h="51" fw="43" fh="51">weapons/em_jammer_strip114.png</animSheet>
+<weaponAnim name="em_jammer">
+	<sheet>em_jammer</sheet>
+	<desc length="114" x="0" y="0"/>
+	<chargedFrame>112</chargedFrame>
+	<fireFrame>113</fireFrame>
+	<firePoint  x="0" y="0" />
+	<mountPoint x="5" y="34" />
+	<chargeImage>weapons/em_jammer_glow.png</chargeImage>
+</weaponAnim>
+
 <animSheet name="laser_painter" w="192" h="56" fw="16" fh="56">weapons/laser_painter_strip12.png</animSheet>
 <weaponAnim name="laser_painter">
 	<sheet>laser_painter</sheet>

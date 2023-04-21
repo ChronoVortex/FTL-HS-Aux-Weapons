@@ -50,6 +50,32 @@
     <iconReplace>recycler_core_icon</iconReplace>
 </weaponBlueprint>
 
+<weaponBlueprint name="EM_JAMMER">
+	<type>LASER</type>
+	<flavorType>Jammer</flavorType>
+	<title>EM Interference Generator</title>
+	<short>EM Jammer</short>
+	<desc>When activated, this device increases enemy shield weapons recharge time by 50% for 5 seconds and deals 1 ion damage directly to engines.</desc>
+	<tooltip>Storage Weapon</tooltip>
+	<damage>0</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<cooldown>11</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>4</rarity>
+	<power>1</power>
+	<cost>60</cost>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>emJammer1</sound>
+		<sound>emJammer2</sound>
+		<sound>emJammer3</sound>
+		<sound>emJammer4</sound>
+	</launchSounds>
+	<weaponArt>em_jammer</weaponArt>
+</weaponBlueprint>
+
 <weaponBlueprint name="LASER_PAINT">
 	<type>LASER</type>
 	<title>Target Painter Laser</title>

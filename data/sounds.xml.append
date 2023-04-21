@@ -1,3 +1,8 @@
 <silence volume="0">weapons/silence.ogg</silence>
 
 <transBomb volume="6">explosions/cv_SFX_BombTrans.ogg</transBomb>
+
+<emJammer1 volume="3">weapons/cv_em_jammer_1.ogg</emJammer1>
+<emJammer2 volume="3">weapons/cv_em_jammer_2.ogg</emJammer2>
+<emJammer3 volume="3">weapons/cv_em_jammer_3.ogg</emJammer3>
+<emJammer4 volume="3">weapons/cv_em_jammer_4.ogg</emJammer4>

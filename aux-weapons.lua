@@ -14,7 +14,9 @@ script.on_load(function()
     end
 end)
 
--- Reset tactical recycler charge when not powered, delete any shots it fires
+-----------------------
+-- TACTICAL RECYCLER --
+-----------------------
 local function handle_tac_recycler(weapons)
     for weapon in vter(weapons) do
         if weapon.blueprint.name == "RECYCLER_CORE" then
@@ -49,7 +51,9 @@ if infernoInstalled then
     end, INT_MAX)
 end
 
--- Pre-ignite weapons to the right of the light igniter
+-----------------------------
+-- LIGHTWEIGHT PRE-IGNITER --
+-----------------------------
 local wasJumping = false
 script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
     local isJumping = false
@@ -71,10 +75,13 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
     end
 end)
 
--- Make drones retarget rooms the painter lasers hit
+----------------------------------------------------
+-- TARGET PAINTER LASERS, TRANS BOMB, DE-ION BOMB --
+----------------------------------------------------
 local painters = {}
 painters["LASER_PAINT"] = true
 painters["LASER_PIERCE_PAINT"] = true
+
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     local weaponName = nil
     pcall(function() weaponName = Hyperspace.Get_Projectile_Extend(projectile).name end)
@@ -106,3 +113,83 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipMa
         end
     end
 end)
+
+---------------
+-- EM JAMMER --
+---------------
+local emJamTimeShip = {}
+emJamTimeShip[0] = 0
+emJamTimeShip[1] = 0
+
+local emJamIon = Hyperspace.Damage()
+emJamIon.iIonDamage = 1
+
+-- Apply shield and weapon cooldown debuffs
+script.on_internal_event(Defines.InternalEvents.GET_AUGMENTATION_VALUE, function(shipManager, augName, augValue)
+    if emJamTimeShip[shipManager.iShipId] > 0 and (augName == "SHIELD_RECHARGE" or augName == "AUTO_COOLDOWN") then
+        augValue = augValue - 0.5
+    end
+    return Defines.Chain.CONTINUE, augValue
+end)
+
+-- Tick down the debuff timers
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+    if not Hyperspace.Global.GetInstance():GetCApp().world.space.gamePaused then
+        if not Hyperspace.ships.player then
+            emJamTimeShip[0] = 0
+        elseif emJamTimeShip[0] > 0 then
+            emJamTimeShip[0] = math.max(0, emJamTimeShip[0] - Hyperspace.FPS.SpeedFactor/16)
+        end
+        if not Hyperspace.ships.enemy then
+            emJamTimeShip[1] = 0
+        elseif emJamTimeShip[1] > 0 then
+            emJamTimeShip[1] = math.max(0, emJamTimeShip[1] - Hyperspace.FPS.SpeedFactor/16)
+        end
+    end
+end)
+
+-- Set timer for debuffs and ion engines
+local function handle_em_jammer(ship, projectile)
+    local otherShip = Hyperspace.Global.GetInstance():GetShipManager((ship.iShipId + 1)%2)
+    if otherShip then
+        emJamTimeShip[otherShip.iShipId] = 5
+        local engineRoom = nil
+        if pcall(function() engineRoom = otherShip:GetSystemRoom(1) end) and engineRoom then
+            local engineRoomShape = Hyperspace.ShipGraph.GetShipInfo(otherShip.iShipId):GetRoomShape(engineRoom)
+            otherShip:DamageArea(Hyperspace.Pointf(engineRoomShape.x + engineRoomShape.w/2, engineRoomShape.y + engineRoomShape.h/2), emJamIon, true)
+        end
+    end
+    projectile:Kill()
+end
+
+-- Detect when jammer is fired
+if infernoInstalled then
+    script.on_fire_event(Defines.FireEvents.WEAPON_FIRE, function(ship, weapon, projectile)
+        if weapon.blueprint.name == "EM_JAMMER" then
+            handle_em_jammer(ship, projectile)
+            return true
+        end
+    end, INT_MAX)
+else
+    local function handle_em_jammer_wrapper(ship, weapons)
+        for weapon in vter(weapons) do
+            if weapon.blueprint.name == "EM_JAMMER" then
+                local projectile = weapon:GetProjectile()
+                if projectile then
+                    Hyperspace.Global.GetInstance():GetCApp().world.space.projectiles:push_back(projectile)
+                    handle_em_jammer(ship, projectile)
+                end
+            end
+        end
+    end
+    script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+        local weaponsPlayer = nil
+        if pcall(function() weaponsPlayer = Hyperspace.ships.player.weaponSystem.weapons end) and weaponsPlayer then
+            handle_em_jammer_wrapper(Hyperspace.ships.player, weaponsPlayer)
+        end
+        local weaponsEnemy = nil
+        if pcall(function() weaponsEnemy = Hyperspace.ships.enemy.weaponSystem.weapons end) and weaponsEnemy then
+            handle_em_jammer_wrapper(Hyperspace.ships.enemy, weaponsEnemy)
+        end
+    end)
+end
