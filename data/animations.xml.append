@@ -24,6 +24,7 @@
 	<fireFrame>2</fireFrame>
 	<firePoint  x="0" y="0" />
 	<mountPoint x="11" y="35" />
+	<chargeImage>weapons/recycler_core_glow.png</chargeImage>
 </weaponAnim>
 <animSheet name="recycler_core_icon" w="86" h="40" fw="43" fh="40">weapons/recycler_core_icon.png</animSheet>
 <anim name="recycler_core_icon">

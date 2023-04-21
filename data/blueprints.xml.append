@@ -24,24 +24,28 @@
 </weaponBlueprint>
 
 <weaponBlueprint name="RECYCLER_CORE">
-	<type>BEAM</type>
+	<type>LASER</type>
 	<flavorType>Recycler</flavorType>
 	<title>Tactical Recycler</title>
 	<short>Recycler</short>
-	<desc>Instead of functioning as a weapon, this device gives all ammo-consuming weapons a 70% chance not to consume ammo while powered. This benefit overrides augments and upgrades which provide a lower recycle chance, and is overridden by a greater recycle chance.</desc>
+	<desc>Instead of functioning as a weapon, this device gives all ammo-consuming weapons a 70% chance not to consume ammo while charged. This benefit overrides augments and upgrades which provide a lower recycle chance, and is overridden by a greater recycle chance.</desc>
 	<tooltip>Storage Weapon</tooltip>
 	<damage>0</damage>
+	<shots>1</shots>
     <augEffects>
-        <augEffect effect="EXPLOSIVE_REPLICATOR" amount="0.7" nostack="true"/>
+        <augEffect effect="EXPLOSIVE_REPLICATOR" amount="0.7" chargeScaling="true" nostack="true"/>
     </augEffects>
 	<sp>0</sp>
-	<cooldown>-1</cooldown>
+	<cooldown>10</cooldown>
 	<speed>0</speed>
 	<length>0</length>
 	<rarity>3</rarity>
 	<power>2</power>
 	<cost>75</cost>
-	<image>beam_contact</image>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>silence</sound>
+	</launchSounds>
 	<weaponArt>recycler_core</weaponArt>
     <iconReplace>recycler_core_icon</iconReplace>
 </weaponBlueprint>

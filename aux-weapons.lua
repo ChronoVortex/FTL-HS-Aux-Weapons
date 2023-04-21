@@ -1,8 +1,53 @@
 if not mods or not mods.vertexutil then
-    error("Couldn't find Vertex Tags and Utility Functions! Make sure it's above mods which depend on it in the Slipstream load order", 2)
+    error("Couldn't find Vertex Tags and Utility Functions! Make sure it's above mods which depend on it in the Slipstream load order")
 end
 
 local vter = mods.vertexutil.vter
+local INT_MAX = 2147483647
+
+-- Make sure that inferno core was patched before this mod if it was patched
+local infernoInstalled = false
+if mods.inferno then infernoInstalled = true end
+script.on_load(function()
+    if not infernoInstalled and mods.inferno then
+        Hyperspace.ErrorMessage("Auxiliary Weapons was patched before Inferno-Core! Please re-patch your mods, and make sure to put Inferno-Core first!")
+    end
+end)
+
+-- Reset tactical recycler charge when not powered, delete any shots it fires
+local function handle_tac_recycler(weapons)
+    for weapon in vter(weapons) do
+        if weapon.blueprint.name == "RECYCLER_CORE" then
+            local projectile = weapon:GetProjectile()
+            if projectile then
+                Hyperspace.Global.GetInstance():GetCApp().world.space.projectiles:push_back(projectile)
+                projectile:Kill()
+            end
+            if not weapon.powered then
+                weapon.cooldown.first = 0
+                weapon.chargeLevel = 0
+            end
+        end
+    end
+end
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+    local weaponsPlayer = nil
+    if pcall(function() weaponsPlayer = Hyperspace.ships.player.weaponSystem.weapons end) and weaponsPlayer then
+        handle_tac_recycler(weaponsPlayer)
+    end
+    local weaponsEnemy = nil
+    if pcall(function() weaponsEnemy = Hyperspace.ships.enemy.weaponSystem.weapons end) and weaponsEnemy then
+        handle_tac_recycler(weaponsEnemy)
+    end
+end)
+if infernoInstalled then
+    script.on_fire_event(Defines.FireEvents.WEAPON_FIRE, function(ship, weapon, projectile)
+        if weapon.blueprint.name == "RECYCLER_CORE" then
+            projectile:Kill()
+            return true
+        end
+    end, INT_MAX)
+end
 
 -- Pre-ignite weapons to the right of the light igniter
 local wasJumping = false
@@ -26,10 +71,10 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
     end
 end)
 
+-- Make drones retarget rooms the painter lasers hit
 local painters = {}
 painters["LASER_PAINT"] = true
 painters["LASER_PIERCE_PAINT"] = true
-
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     local weaponName = nil
     pcall(function() weaponName = Hyperspace.Get_Projectile_Extend(projectile).name end)
