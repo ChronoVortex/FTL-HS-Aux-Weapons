@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- Multiverse sectors -->
+
 <mod:findName type="sectorDescription" name="SECRET_ANCIENT">
     <mod:findLike type="rarityList">
         <mod-append:blueprint name="LIGHT_PRE_IGNITER" rarity="0"/>
@@ -18,6 +20,32 @@
         <mod-append:blueprint name="LASER_PAINT" rarity="0"/>
         <mod-append:blueprint name="LASER_PIERCE_PAINT" rarity="0"/>
         <mod-append:blueprint name="BOMB_ION_ANTI" rarity="0"/>
+    </mod:findLike>
+</mod:findName>
+
+<mod:findName type="sectorDescription" name="SECTOR_ZOLTAN">
+    <mod:findLike type="rarityList">
+        <mod-append:blueprint name="BOMB_SHIELD" rarity="3"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_DUSKBRINGER">
+    <mod:findLike type="rarityList">
+        <mod-append:blueprint name="BOMB_SHIELD" rarity="3"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_MONK">
+    <mod:findLike type="rarityList">
+        <mod-append:blueprint name="BOMB_SHIELD" rarity="2"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_ZOLTAN_UNIQUE">
+    <mod:findLike type="rarityList">
+        <mod-append:blueprint name="BOMB_SHIELD" rarity="2"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_DUSKBRINGER_UNIQUE">
+    <mod:findLike type="rarityList">
+        <mod-append:blueprint name="BOMB_SHIELD" rarity="3"/>
     </mod:findLike>
 </mod:findName>
 
@@ -68,6 +96,19 @@
 </mod:findName>
 
 
+
+<!-- Vanilla sectors -->
+
+<mod:findName type="sectorDescription" name="ZOLTAN_HOME">
+    <mod:findLike type="rarityList">
+        <mod-append:blueprint name="BOMB_SHIELD" rarity="3"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="sectorDescription" name="ZOLTAN_SECTOR">
+    <mod:findLike type="rarityList">
+        <mod-append:blueprint name="BOMB_SHIELD" rarity="3"/>
+    </mod:findLike>
+</mod:findName>
 
 <mod:findName type="sectorDescription" name="NEBULA_SECTOR">
     <mod:findLike type="rarityList">

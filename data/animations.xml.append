@@ -83,6 +83,23 @@
 	<time>1.0</time>
 </anim>
 
+<animSheet name="bomblauncher_shield" w="756" h="52" fw="42" fh="52">weapons/bomblauncher_shield_strip18.png</animSheet>
+<weaponAnim name="bomblauncher_shield">
+	<sheet>bomblauncher_shield</sheet>
+	<desc length="18" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>14</fireFrame>
+	<firePoint x="20" y="21" />
+	<mountPoint x="5" y="35" />
+	<chargeImage>weapons/bomblauncher_shield_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="bomb_shield" w="525" h="35" fw="35" fh="35">weapons/bomb_shield.png</animSheet>
+<anim name="bomb_shield">
+	<sheet>bomb_shield</sheet>
+	<desc length="15" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
+
 <animSheet name="bomblauncher_trans" w="540" h="40" fw="36" fh="40">weapons/bomblauncher_trans.png</animSheet>
 <weaponAnim name="bomblauncher_trans">
 	<sheet>bomblauncher_trans</sheet>

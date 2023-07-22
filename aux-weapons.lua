@@ -58,21 +58,42 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
     end
 end)
 
-----------------------------------------------------
--- TARGET PAINTER LASERS, TRANS BOMB, DE-ION BOMB --
-----------------------------------------------------
+-----------------------------------------------------------------
+-- TARGET PAINTER LASERS, TRANS BOMB, DE-ION BOMB, SHIELD BOMB --
+-----------------------------------------------------------------
 local painters = {}
 painters["LASER_PAINT"] = true
 painters["LASER_PIERCE_PAINT"] = true
 
+local shieldBombRaise = 3
+local shieldBombDrop = 6
+
+local superShieldDropper = Hyperspace.Damage()
+superShieldDropper.iDamage = shieldBombDrop
+
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     local weaponName = nil
-    pcall(function() weaponName = Hyperspace.Get_Projectile_Extend(projectile).name end)
-    if weaponName then
+    if pcall(function() weaponName = projectile.extend.name end) and weaponName then
+        local otherShip = Hyperspace.Global.GetInstance():GetShipManager((shipManager.iShipId + 1)%2)
+    
         -- Make drones target the location the target painter laser hit
         if painters[weaponName] then
-            for drone in vter(Hyperspace.Global.GetInstance():GetShipManager((shipManager.iShipId + 1)%2).spaceDrones) do
+            for drone in vter(otherShip.spaceDrones) do
                 drone.targetLocation = location
+            end
+        end
+        
+        -- Add or remove energy shields for shield bomb
+        if weaponName == "BOMB_SHIELD" then
+            local shields = nil
+            if pcall(function() shields = shipManager.shieldSystem end) and shields then
+                if shipManager.iShipId == projectile.ownerId then
+                    for i = 1, shieldBombRaise do
+                        shields:AddSuperShield(Hyperspace.Point(projectile.position.x, projectile.position.y))
+                    end
+                elseif shipManager:GetShieldPower().super.first > 0 then
+                    shields:CollisionReal(projectile.position.x, projectile.position.y, superShieldDropper, true)
+                end
             end
         end
         
@@ -96,6 +117,16 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipMa
         end
     end
 end)
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+    -- Remove energy shields for shield bomb
+    if projectile.destinationSpace ~= projectile.ownerId and weapon.blueprint.name == "BOMB_SHIELD" then
+        local ship = Hyperspace.Global.GetInstance():GetShipManager(weapon.iShipId)
+        local otherShip = Hyperspace.Global.GetInstance():GetShipManager((weapon.iShipId + 1)%2)
+        if ship:GetAugmentationValue("ZOLTAN_BYPASS") <= 0 and ship:HasAugmentation("ZOLTAN_BYPASS") <= 0 and otherShip:GetShieldPower().super.first > 0 then
+            projectile.damage.iDamage = projectile.damage.iDamage + shieldBombDrop
+        end
+    end
+end)
 
 ---------------
 -- EM JAMMER --
@@ -109,7 +140,7 @@ emJamIon.iIonDamage = 1
 
 -- Apply shield and weapon cooldown debuffs
 script.on_internal_event(Defines.InternalEvents.GET_AUGMENTATION_VALUE, function(shipManager, augName, augValue)
-    if emJamTimeShip[shipManager.iShipId] > 0 and (augName == "SHIELD_RECHARGE" or augName == "AUTO_COOLDOWN") then
+    if shipManager and emJamTimeShip[shipManager.iShipId] > 0 and (augName == "SHIELD_RECHARGE" or augName == "AUTO_COOLDOWN") then
         augValue = augValue - 0.5
     end
     return Defines.Chain.CONTINUE, augValue

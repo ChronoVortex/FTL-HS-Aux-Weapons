@@ -1,5 +1,6 @@
 <silence volume="0">weapons/silence.ogg</silence>
 
+<shieldBomb volume="6">explosions/cv_SFX_BombShield.ogg</shieldBomb>
 <transBomb volume="6">explosions/cv_SFX_BombTrans.ogg</transBomb>
 
 <emJammer1 volume="3">weapons/cv_em_jammer_1.ogg</emJammer1>

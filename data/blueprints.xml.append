@@ -55,7 +55,7 @@
 	<flavorType>Jammer</flavorType>
 	<title>EM Interference Generator</title>
 	<short>EM Jammer</short>
-	<desc>When activated, this device increases enemy shield weapons recharge time by 50% for 5 seconds and deals 1 ion damage directly to engines.</desc>
+	<desc>When activated, this device increases enemy shield and weapons recharge time by 50% for 5 seconds and deals 1 ion damage directly to engines.</desc>
 	<tooltip>Storage Weapon</tooltip>
 	<damage>0</damage>
 	<shots>1</shots>
@@ -204,6 +204,38 @@ Ion Damage: -2</tooltipOverride>
 		<sound>healBomb</sound>
 	</hitShipSounds>
 	<weaponArt>bomblauncher_ion_anti</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="BOMB_SHIELD">
+	<type>BOMB</type>
+	<tip>tip_bombs</tip>
+	<title>Shielding Bomb</title>
+	<short>Shielding B.</short>
+	<locked>1</locked>
+	<desc>Self-teleporting explosive capable of overcharging shields. Provides 3 energy shield layers when targeting your own ship and removes 6 layers when targeting enemy ships.</desc>
+	<tooltip>Bomb weapon; requires a missile; adds energy shields to your ship and removes them from enemy ships.</tooltip>
+	<damage>0</damage>
+	<accuracyMod>30</accuracyMod>
+	<missiles>1</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>22</cooldown>
+	<power>0</power>
+	<cost>55</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_shield</image>
+	<explosion>explosion_big1_heal</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>shieldBomb</sound>
+	</hitShipSounds>
+	<weaponArt>bomblauncher_shield</weaponArt>
 	<iconImage>bomb</iconImage>
 </weaponBlueprint>
 
