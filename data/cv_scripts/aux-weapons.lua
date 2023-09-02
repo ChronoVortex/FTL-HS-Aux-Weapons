@@ -37,24 +37,16 @@ end, INT_MAX)
 -----------------------------
 -- LIGHTWEIGHT PRE-IGNITER --
 -----------------------------
-local wasJumping = false
-script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
-    local isJumping = false
-    if pcall(function() isJumping = Hyperspace.ships.player.bJumping end) then
-        if not isJumping and wasJumping then
-            local weapons = nil
-            pcall(function() weapons = Hyperspace.ships.player.weaponSystem.weapons end)
-            if weapons then
-                local lastWeaponWasIgniter = false
-                for weapon in vter(weapons) do
-                    if lastWeaponWasIgniter and weapon.powered then
-                        weapon:ForceCoolup()
-                    end
-                    lastWeaponWasIgniter = weapon.blueprint.name == "LIGHT_PRE_IGNITER"
-                end
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(ship)
+    local weapons = nil
+    if pcall(function() weapons = ship.weaponSystem.weapons end) and weapons then
+        local lastWeaponWasIgniter = false
+        for weapon in vter(weapons) do
+            if lastWeaponWasIgniter and weapon.powered then
+                weapon:ForceCoolup()
             end
+            lastWeaponWasIgniter = weapon.blueprint.name == "LIGHT_PRE_IGNITER"
         end
-        wasJumping = isJumping
     end
 end)
 

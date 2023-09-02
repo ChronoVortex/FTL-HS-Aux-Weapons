@@ -3,7 +3,7 @@
 <FTL>
 
 <mod:findLike type="scripts" limit="1">
-    <mod-append:script>aux-weapons.lua</mod-append:script>
+    <mod-append:script>data/cv_scripts/aux-weapons.lua</mod-append:script>
 </mod:findLike>
 
 </FTL>
