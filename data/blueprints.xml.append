@@ -135,7 +135,7 @@
 	<rarity>4</rarity>
 	<image>laser_burst</image>
 	<launchSounds>
-		<sound>laser_piece</sound>
+		<sound>laser_pierce</sound>
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
