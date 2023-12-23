@@ -16,12 +16,12 @@
 	<time>1.0</time>
 </anim>
 
-<animSheet name="recycler_core" w="4508" h="51" fw="49" fh="51">weapons/recycler_core_strip92.png</animSheet>
+<animSheet name="recycler_core" w="8918" h="51" fw="49" fh="51">weapons/recycler_core_strip182.png</animSheet>
 <weaponAnim name="recycler_core">
 	<sheet>recycler_core</sheet>
-	<desc length="92" x="0" y="0"/>
-	<chargedFrame>90</chargedFrame>
-	<fireFrame>91</fireFrame>
+	<desc length="182" x="0" y="0"/>
+	<chargedFrame>180</chargedFrame>
+	<fireFrame>181</fireFrame>
 	<firePoint  x="0" y="0" />
 	<mountPoint x="11" y="35" />
 	<chargeImage>weapons/recycler_core_glow.png</chargeImage>

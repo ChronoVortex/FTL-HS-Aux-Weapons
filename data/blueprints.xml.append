@@ -36,11 +36,11 @@
         <augEffect effect="EXPLOSIVE_REPLICATOR" amount="0.7" chargeScaling="true" nostack="true"/>
     </augEffects>
 	<sp>0</sp>
-	<cooldown>10</cooldown>
+	<cooldown>20</cooldown>
 	<speed>0</speed>
 	<length>0</length>
 	<rarity>3</rarity>
-	<power>2</power>
+	<power>1</power>
 	<cost>75</cost>
 	<image>laser_burst</image>
 	<launchSounds>
