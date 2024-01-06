@@ -192,7 +192,7 @@ Ion Damage: -2</tooltipOverride>
 	<breachChance>0</breachChance>
 	<cooldown>22</cooldown>
 	<power>0</power>
-	<mv:conservative/>
+	<mv-conservative/>
 	<cost>55</cost>
 	<bp>4</bp>
 	<rarity>4</rarity>
@@ -225,7 +225,7 @@ Ion Damage: -2</tooltipOverride>
 	<breachChance>0</breachChance>
 	<cooldown>22</cooldown>
 	<power>0</power>
-	<mv:conservative/>
+	<mv-conservative/>
 	<cost>55</cost>
 	<bp>4</bp>
 	<rarity>0</rarity>
