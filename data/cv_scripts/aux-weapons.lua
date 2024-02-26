@@ -66,7 +66,7 @@ superShieldDropper.iDamage = shieldBombDrop
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     local weaponName = nil
     if pcall(function() weaponName = projectile.extend.name end) and weaponName then
-        local otherShip = Hyperspace.Global.GetInstance():GetShipManager((shipManager.iShipId + 1)%2)
+        local otherShip = Hyperspace.ships(1 - shipManager.iShipId)
     
         -- Make drones target the location the target painter laser hit
         if painters[weaponName] then
@@ -112,8 +112,8 @@ end)
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
     -- Remove energy shields for shield bomb
     if projectile.destinationSpace ~= projectile.ownerId and weapon.blueprint.name == "BOMB_SHIELD" then
-        local ship = Hyperspace.Global.GetInstance():GetShipManager(weapon.iShipId)
-        local otherShip = Hyperspace.Global.GetInstance():GetShipManager((weapon.iShipId + 1)%2)
+        local ship = Hyperspace.ships(weapon.iShipId)
+        local otherShip = Hyperspace.ships(1 - weapon.iShipId)
         if ship:GetAugmentationValue("ZOLTAN_BYPASS") <= 0 and ship:HasAugmentation("ZOLTAN_BYPASS") <= 0 and otherShip:GetShieldPower().super.first > 0 then
             projectile.damage.iDamage = projectile.damage.iDamage + shieldBombDrop
         end
@@ -152,7 +152,7 @@ end)
 -- Set timer for debuffs and ion engines when jammer is fired
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
     if weapon.blueprint.name == "EM_JAMMER" then
-        local otherShip = Hyperspace.Global.GetInstance():GetShipManager((weapon.iShipId + 1)%2)
+        local otherShip = Hyperspace.ships(1 - weapon.iShipId)
         if otherShip then
             emJamTimeShip[otherShip.iShipId] = 5
             local engineRoom = nil
