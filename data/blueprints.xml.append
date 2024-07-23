@@ -151,6 +151,7 @@
 	</missSounds>
 	<weaponArt>laser_pierce_painter</weaponArt>
 	<iconImage>laser</iconImage>
+    <iconReplace>laser_painter_pierce_icon</iconReplace>
 </weaponBlueprint>
 
 <weaponBlueprint name="BOMB_ION_ANTI">

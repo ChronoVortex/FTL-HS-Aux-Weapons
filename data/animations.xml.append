@@ -55,16 +55,22 @@
 	<chargeImage>weapons/laser_painter_glow.png</chargeImage>
 </weaponAnim>
 
-<animSheet name="laser_pierce_painter" w="299" h="63" fw="23" fh="63">weapons/laser_painter_pierce_strip13.png</animSheet>
+<animSheet name="laser_pierce_painter" w="232" h="137" fw="29" fh="137">weapons/laser_painter_pierce_strip8.png</animSheet>
 <weaponAnim name="laser_pierce_painter">
 	<sheet>laser_pierce_painter</sheet>
-	<desc length="13" x="0" y="0"/>
-	<chargedFrame>5</chargedFrame>
-	<fireFrame>9</fireFrame>
-	<firePoint  x="15" y="10"/>
-	<mountPoint x="4" y="40"/>
+	<desc length="8" x="0" y="0"/>
+	<chargedFrame>3</chargedFrame>
+	<fireFrame>6</fireFrame>
+	<firePoint  x="19" y="60"/>
+	<mountPoint x="9" y="105"/>
 	<chargeImage>weapons/laser_painter_pierce_glow.png</chargeImage>
 </weaponAnim>
+<animSheet name="laser_painter_pierce_icon" w="89" h="29" fw="89" fh="29">weapons/laser_painter_pierce_icon.png</animSheet>
+<anim name="laser_painter_pierce_icon">
+	<sheet>laser_painter_pierce_icon</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
 
 <animSheet name="bomblauncher_ion_anti" w="455" h="40" fw="35" fh="40">weapons/bomblauncher_ion_anti_strip13.png</animSheet>
 <weaponAnim name="bomblauncher_ion_anti">
