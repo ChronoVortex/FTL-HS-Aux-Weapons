@@ -247,19 +247,35 @@ Ion Damage: -2</tooltipOverride>
 	<tip>tip_bombs</tip>
 	<title>Sex Change Bomb</title>
 	<short>Sex Bomb</short>
+	<locked>1</locked>
 	<desc>Originally invented by the slugs to demoralize their opponents, this "weapon" has ironically made it much easier for members of gendered races to attain the body which best suits them.</desc>
 	<tooltip>Bomb weapon; requires a missile; swaps sex of nearby crewmembers. Can target your own ship.</tooltip>
 	<damage>0</damage>
 	<sysDamage>0</sysDamage>
 	<persDamage>-16</persDamage>
+	<accuracyMod>30</accuracyMod>
+	<statBoosts>
+		<statBoost name="healAmount">
+			<boostType>FLAT</boostType>
+			<amount>2.0</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>20</duration>
+			<boostAnim>heal_particles</boostAnim>
+		</statBoost>
+	</statBoosts>
 	<missiles>1</missiles>
 	<shots>1</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
 	<breachChance>0</breachChance>
-	<cooldown>18</cooldown>
-	<power>1</power>
-	<cost>40</cost>
+	<cooldown>14</cooldown>
+	<power>0</power>
+	<mv-conservative/>
+	<cost>60</cost>
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<image>bomb_trans</image>
