@@ -10,6 +10,7 @@
         <mod-append:blueprint name="LASER_PAINT" rarity="0"/>
         <mod-append:blueprint name="LASER_PIERCE_PAINT" rarity="0"/>
         <mod-append:blueprint name="BOMB_ION_ANTI" rarity="0"/>
+        <mod-append:blueprint name="DRONE_SHIELD_BOOST" rarity="0"/>
     </mod:findLike>
 </mod:findName>
 <mod:findName type="sectorDescription" name="SECRET_ROYAL">
@@ -20,6 +21,7 @@
         <mod-append:blueprint name="LASER_PAINT" rarity="0"/>
         <mod-append:blueprint name="LASER_PIERCE_PAINT" rarity="0"/>
         <mod-append:blueprint name="BOMB_ION_ANTI" rarity="0"/>
+        <mod-append:blueprint name="DRONE_SHIELD_BOOST" rarity="0"/>
     </mod:findLike>
 </mod:findName>
 
